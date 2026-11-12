@@ -1,0 +1,63 @@
+/* VELOOP Rewards Design Tokens - Fintech Inspired, High Trust, Premium */
+:root {
+  /* Brand Palette */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1a2234;
+  --bg-card: rgba(26, 34, 52, 0.7);
+  --bg-card-hover: rgba(33, 44, 67, 0.85);
+  --bg-glass: rgba(16, 24, 39, 0.75);
+  --bg-elevated: #1f293d;
+
+  /* Accent & Gradients */
+  --accent-gold: #f59e0b;
+  --accent-gold-light: #fbbf24;
+  --accent-gold-dark: #d97706;
+  --accent-gold-glow: rgba(245, 158, 11, 0.2);
+
+  --accent-brand: #6366f1;
+  --accent-brand-light: #818cf8;
+  --accent-brand-dark: #4f46e5;
+  --accent-brand-glow: rgba(99, 102, 241, 0.25);
+
+  --accent-emerald: #10b981;
+  --accent-emerald-light: #34d399;
+  --accent-emerald-glow: rgba(16, 185, 129, 0.2);
+
+  --accent-danger: #ef4444;
+  --accent-danger-glow: rgba(239, 68, 68, 0.2);
+
+  /* Currencies */
+  --color-ve: #f59e0b;      /* VEs - Gold */
+  --color-sve: #8b5cf6;     /* SVEs - Purple */
+  --color-token: #06b6d4;   /* Tokens - Cyan */
+
+  /* Text Colors */
+  --text-main: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-accent: rgba(245, 158, 11, 0.35);
+
+  /* Shadows & Elevations */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.25);
+  --shadow-gold: 0 0 25px rgba(245, 158, 11, 0.25);
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}

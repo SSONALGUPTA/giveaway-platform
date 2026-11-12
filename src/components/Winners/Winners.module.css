@@ -1,0 +1,499 @@
+.sectionWrapper {
+  padding: 50px 0;
+}
+
+/* Winner Banner per Spec Section 26 */
+.winnerHighlightBanner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(99, 102, 241, 0.15) 100%);
+  border: 2px solid var(--accent-gold);
+  border-radius: var(--radius-xl);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.25), inset 0 0 20px rgba(245, 158, 11, 0.1);
+  margin-bottom: 30px;
+  animation: bannerGlow 3s infinite ease-in-out;
+}
+
+@keyframes bannerGlow {
+  0%, 100% { border-color: var(--accent-gold); }
+  50% { border-color: var(--accent-gold-light); box-shadow: 0 12px 36px rgba(245, 158, 11, 0.35); }
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.trophyGlowBox {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-lg);
+  background: rgba(245, 158, 11, 0.25);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.winnerGlowIcon {
+  color: var(--accent-gold-light);
+}
+
+.congratsRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.goldSparkle {
+  color: var(--accent-gold);
+}
+
+.congratsHeading {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--accent-gold-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.wonPrizeHeadline {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 4px;
+}
+
+.claimSubtext {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.bannerRight {
+  flex-shrink: 0;
+}
+
+.claimActionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+  color: #0f172a;
+  border-radius: var(--radius-md);
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
+  transition: all 0.25s ease;
+}
+
+.claimActionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.55);
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .winnerHighlightBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bannerRight {
+    width: 100%;
+  }
+  .claimActionBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 36px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Tab Toggle */
+.tabToggleRow {
+  display: inline-flex;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 6px;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: var(--text-main);
+}
+
+.tabBtnActive {
+  background: var(--accent-gold);
+  color: #0f172a !important;
+}
+
+/* Winner Card */
+.winnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.winnerCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.winnerCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatarCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trophyIcon {
+  color: var(--accent-gold);
+}
+
+.maskedId {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: block;
+}
+
+.verifiedTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--accent-emerald-light);
+  font-weight: 600;
+}
+
+.statusPill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-emerald-light);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.cardMiddle {
+  margin-bottom: 16px;
+}
+
+.wonLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.prizeTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold-light);
+  margin: 0;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 12px;
+}
+
+.eventLabel {
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.eventValue {
+  font-weight: 600;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calIcon {
+  color: var(--text-muted);
+}
+
+/* Live Announcement Box for Active Giveaway (Spec Section 21) */
+.liveAnnouncementCard {
+  background: var(--bg-card);
+  border: 1px dashed var(--border-accent);
+  border-radius: var(--radius-lg);
+  padding: 48px 24px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+}
+
+.liveIconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.clockIcon {
+  color: var(--accent-gold);
+}
+
+.liveBadgeRow {
+  margin-bottom: 12px;
+}
+
+.livePill {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald-light);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.liveTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.liveText {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 auto 20px;
+}
+
+.auditDisclaimer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Previous Winners Meta */
+.previousContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.previousMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.metaTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.emptyWinnersBox {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.trophyEmpty {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* Winner Slider Styles (Spec Section 18-19) */
+.sliderContainer {
+  background: rgba(17, 24, 39, 0.8);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 0;
+  backdrop-filter: blur(8px);
+}
+
+.sliderInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.badgePrefix {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.sparkleIcon {
+  color: var(--accent-gold);
+}
+
+.messageTrack {
+  flex: 1;
+  overflow: hidden;
+  text-align: center;
+}
+
+.messageContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.awardIcon {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.messageText {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.dotsGroup {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-medium);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.dotActive {
+  background: var(--accent-gold);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .sliderInner {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .dotsGroup {
+    display: none;
+  }
+}

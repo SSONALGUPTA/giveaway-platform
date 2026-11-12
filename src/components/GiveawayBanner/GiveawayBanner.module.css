@@ -1,0 +1,241 @@
+.bannerContainer {
+  position: relative;
+  background: linear-gradient(135deg, #0d0f22 0%, #171131 50%, #0d0f22 100%);
+  border: 1.5px solid rgba(168, 85, 247, 0.45);
+  border-radius: 28px;
+  padding: 36px 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(147, 51, 234, 0.2);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.codePill {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(147, 51, 234, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c084fc;
+  backdrop-filter: blur(8px);
+}
+
+.codeIcon {
+  color: #c084fc;
+}
+
+.contentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Left Gift Box */
+.giftVisualCol {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.giftBoxImg {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.9));
+  z-index: 2;
+  animation: floatGift 3.5s ease-in-out infinite;
+}
+
+@keyframes floatGift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.glowAura {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+.glowRing {
+  position: absolute;
+  bottom: 14px;
+  width: 140px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.8) 0%, rgba(147, 51, 234, 0.3) 50%, transparent 70%);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
+  z-index: 1;
+}
+
+/* Center Column */
+.centerCol {
+  flex: 1;
+  text-align: left;
+  max-width: 500px;
+}
+
+.sparkleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #c084fc;
+  margin-bottom: 8px;
+}
+
+.sparkleIcon {
+  color: #c084fc;
+}
+
+.bannerTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.gradientRewards {
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerDesc {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.highlightText {
+  color: #c084fc;
+  font-weight: 700;
+}
+
+/* Feature Row */
+.featureRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px 14px;
+}
+
+.featureIconBox {
+  color: #c084fc;
+  display: flex;
+  align-items: center;
+}
+
+.featureText {
+  display: flex;
+  flex-direction: column;
+}
+
+.featureText strong {
+  font-size: 0.78rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.featureText span {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.enterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.45);
+  transition: all 0.25s ease;
+}
+
+.enterBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 26px rgba(139, 92, 246, 0.65);
+}
+
+/* Right Ticket Visual */
+.ticketVisualCol {
+  position: relative;
+  width: 250px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ticketImg {
+  width: 240px;
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.85));
+  transform: rotate(-4deg);
+  transition: transform 0.3s ease;
+}
+
+.ticketVisualCol:hover .ticketImg {
+  transform: rotate(0deg) scale(1.04);
+}
+
+@media (max-width: 1100px) {
+  .ticketVisualCol {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentRow {
+    flex-direction: column;
+    text-align: center;
+  }
+  .centerCol {
+    text-align: center;
+  }
+  .featureRow {
+    justify-content: center;
+  }
+  .bannerContainer {
+    padding: 24px;
+  }
+  .codePill {
+    position: static;
+    margin-bottom: 16px;
+  }
+}

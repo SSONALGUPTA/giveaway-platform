@@ -1,0 +1,140 @@
+.footer {
+  background: #060911;
+  border-top: 1px solid var(--border-subtle);
+  padding: 50px 0 30px;
+  margin-top: 60px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.brandBox {
+  max-width: 380px;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.giftIcon {
+  color: var(--accent-gold);
+}
+
+.brandTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.brandDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.linksNav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.footerLink:hover {
+  color: var(--accent-gold);
+}
+
+.supportBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.supportLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.supportIcon {
+  color: var(--accent-brand-light);
+}
+
+.supportContactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-brand-light);
+  transition: all 0.2s ease;
+}
+
+.supportContactBtn:hover {
+  background: var(--accent-brand);
+  color: #fff;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyright {
+  margin: 0;
+}
+
+.complianceRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.shieldIcon {
+  color: var(--accent-emerald);
+}
+
+@media (max-width: 768px) {
+  .topRow, .supportBox, .bottomRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
