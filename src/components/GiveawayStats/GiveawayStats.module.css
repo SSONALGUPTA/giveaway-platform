@@ -95,6 +95,12 @@
   gap: 6px;
 }
 
+.countdownCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
 .statNumber {
   font-size: 1.35rem;
   font-weight: 800;

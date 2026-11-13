@@ -84,7 +84,7 @@ export default function GiveawayStats({ giveaway }) {
           </div>
           <div className={styles.statContent}>
             <span className={styles.statLabel}>Ends In</span>
-            <div className={styles.statValueRow}>
+            <div className={styles.countdownCol}>
               <span className={styles.countdownValue}>{timeLeft}</span>
               <span className={styles.statUnitOrange}>Remaining</span>
             </div>

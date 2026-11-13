@@ -229,20 +229,26 @@
   text-overflow: ellipsis;
 }
 
-/* Meta Stats */
+/* Meta Stats - 2-column layout matching Image 2 */
 .metaRow {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
   margin-bottom: 12px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: #94a3b8;
 }
 
-.metaItem {
+.metaCol {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.metaIconLine {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -251,6 +257,24 @@
 .metaIcon {
   color: #c084fc;
   flex-shrink: 0;
+}
+
+.metaNumber {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metaSub {
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Join Now Button */

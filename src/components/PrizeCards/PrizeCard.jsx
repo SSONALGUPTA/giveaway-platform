@@ -14,13 +14,15 @@ export default function PrizeCard({ prize, onSelectPrize }) {
   const glowClass = isP1 ? styles.glowP1 : isP2 ? styles.glowP2 : isP3 ? styles.glowP3 : styles.glowP4;
   const btnClass = isP1 ? styles.btnP1 : isP2 ? styles.btnP2 : isP3 ? styles.btnP3 : styles.btnP4;
 
-  const participants = prize.participantsCount 
+  const participantsCount = prize.participantsCount 
     ? `${(prize.participantsCount / 1000).toFixed(1)}K+` 
     : isP1 ? '2.3K+' : isP2 ? '1.8K+' : isP3 ? '3.1K+' : '1.3K+';
 
   const timeRemaining = prize.remainingTime || (
-    isP1 ? '12d : 08h : 45m' : isP2 ? '9d : 06h : 30m' : isP3 ? '7d : 09h : 20m' : '5d : 12h : 15m'
+    isP1 ? '12d:08h:59m' : isP2 ? '9d:06h:30m' : isP3 ? '7d:09h:20m' : '5d:21h:15m'
   );
+
+  const timeSub = isP1 ? '45m left' : 'left';
 
   return (
     <div className={styles.prizeCard}>
@@ -52,15 +54,21 @@ export default function PrizeCard({ prize, onSelectPrize }) {
           {prize.subname || prize.description}
         </p>
 
-        {/* Stats Grid: Participants & Countdown */}
+        {/* Stats Grid: Participants & Countdown matching Image 2 */}
         <div className={styles.metaRow}>
-          <div className={styles.metaItem}>
-            <Users size={12} className={styles.metaIcon} />
-            <span>{participants} Participants</span>
+          <div className={styles.metaCol}>
+            <div className={styles.metaIconLine}>
+              <Users size={11} className={styles.metaIcon} />
+              <span className={styles.metaNumber}>{participantsCount}</span>
+            </div>
+            <span className={styles.metaSub}>Participants</span>
           </div>
-          <div className={styles.metaItem}>
-            <Clock size={12} className={styles.metaIcon} />
-            <span>{timeRemaining}</span>
+          <div className={styles.metaCol}>
+            <div className={styles.metaIconLine}>
+              <Clock size={11} className={styles.metaIcon} />
+              <span className={styles.metaNumber}>{timeRemaining}</span>
+            </div>
+            <span className={styles.metaSub}>{timeSub}</span>
           </div>
         </div>
 
