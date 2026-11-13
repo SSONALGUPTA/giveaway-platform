@@ -47,7 +47,7 @@ export default function HowToParticipate({ onRulesClick }) {
           const IconComp = item.icon;
           return (
             <div key={item.step} className={styles.stepItem}>
-              {/* Connected Line */}
+              {/* Dotted Connecting Line between circles */}
               {idx < STEPS.length - 1 && <div className={styles.dottedLine} />}
 
               {/* Step Circle */}
@@ -76,9 +76,9 @@ export default function HowToParticipate({ onRulesClick }) {
             if (onRulesClick) onRulesClick();
           }}
         >
-          <FileText size={15} />
+          <FileText size={14} />
           <span>View Rules & Guidelines</span>
-          <ArrowRight size={14} />
+          <ArrowRight size={13} />
         </button>
       </div>
     </div>

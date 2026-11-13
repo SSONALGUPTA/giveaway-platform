@@ -1,14 +1,15 @@
 .heroSection {
-  padding: 24px 0 36px;
+  padding: 12px 0 28px;
   position: relative;
   overflow: visible;
+  width: 100%;
 }
 
-/* Brand Logo */
+/* Top Left Brand Logo */
 .brandRow {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .brandContainer {
@@ -18,22 +19,23 @@
 }
 
 .vrLogo {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ec4899 0%, #f97316 50%, #eab308 100%);
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(236, 72, 153, 0.4);
+  background: linear-gradient(135deg, #f43f5e 0%, #f97316 50%, #eab308 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(244, 63, 94, 0.45);
 }
 
 .vrText {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 900;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: -0.05em;
   font-style: italic;
+  transform: skewX(-4deg);
 }
 
 .brandText {
@@ -42,18 +44,20 @@
 }
 
 .brandName {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
   color: #ffffff;
   line-height: 1.1;
 }
 
 .brandSub {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #94a3b8;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  background: linear-gradient(90deg, #f43f5e 0%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Hero Center */
@@ -62,29 +66,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
-  margin-bottom: 36px;
+  min-height: 250px;
+  margin: 10px 0 24px;
 }
 
 .centerContent {
   text-align: center;
   z-index: 2;
-  max-width: 620px;
+  max-width: 650px;
+  padding: 0 16px;
 }
 
 .exclusivePill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(147, 51, 234, 0.15);
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  background: rgba(88, 28, 135, 0.35);
+  border: 1px solid rgba(168, 85, 247, 0.45);
   border-radius: 9999px;
-  padding: 6px 16px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  padding: 5px 16px;
+  font-size: 0.72rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
   color: #e9d5ff;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
   backdrop-filter: blur(8px);
 }
 
@@ -93,22 +99,23 @@
 }
 
 .mainTitle {
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 900;
   letter-spacing: -0.02em;
   color: #ffffff;
   margin-bottom: 12px;
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .gradientText {
-  background: linear-gradient(135deg, #c084fc 0%, #e879f9 50%, #f472b6 100%);
+  background: linear-gradient(90deg, #c084fc 0%, #e879f9 50%, #f472b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
 .subtitle {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #94a3b8;
   line-height: 1.5;
   margin-bottom: 14px;
@@ -118,7 +125,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: #c084fc;
 }
@@ -127,33 +134,34 @@
   color: #c084fc;
 }
 
-/* 3D Gift on Pedestal */
+/* 3D Gift Box Illustrations on Glowing Pedestals */
 .giftBoxWrapper {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 200px;
+  width: 190px;
   height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  z-index: 1;
 }
 
 .leftGift {
-  left: 4%;
+  left: 2%;
 }
 
 .rightGift {
-  right: 4%;
+  right: 2%;
 }
 
 .giftImg {
-  width: 140px;
-  height: 140px;
+  width: 145px;
+  height: 145px;
   object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.85));
   z-index: 2;
   animation: floatGift 4s ease-in-out infinite;
 }
@@ -167,154 +175,116 @@
     transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-8px) rotate(1.5deg);
   }
 }
 
 .giftAura {
   position: absolute;
-  top: 15%;
+  top: 20%;
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
   filter: blur(25px);
   z-index: 1;
 }
 
 .pedestal {
-  width: 150px;
-  height: 24px;
+  width: 140px;
+  height: 22px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.7) 0%, rgba(147, 51, 234, 0.3) 40%, transparent 70%);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
-  margin-top: -12px;
+  background: radial-gradient(ellipse at center, rgba(168, 85, 247, 0.85) 0%, rgba(147, 51, 234, 0.4) 45%, transparent 75%);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.75), 0 0 45px rgba(168, 85, 247, 0.4);
+  margin-top: -14px;
   z-index: 1;
 }
 
-/* Stats Strip (4 Horizontal Cards) */
-.statsStrip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 28px;
+/* Floating Confetti Flakes */
+.confettiParticle1 {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 7px;
+  height: 12px;
+  background: #f59e0b;
+  transform: rotate(25deg);
+  border-radius: 2px;
+  opacity: 0.85;
+  box-shadow: 0 0 6px #f59e0b;
+  animation: driftConfetti 3s ease-in-out infinite alternate;
 }
 
-.statCard {
-  background: #0d121f;
-  border: 1px solid #1a2236;
-  border-radius: 16px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+.confettiParticle2 {
+  position: absolute;
+  bottom: 25%;
+  right: 15%;
+  width: 8px;
+  height: 8px;
+  background: #fbbf24;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  opacity: 0.8;
+  animation: driftConfetti 4s ease-in-out infinite alternate 1s;
 }
 
-.statCard:hover {
-  transform: translateY(-2px);
-  border-color: #2e3b5a;
+.confettiParticle3 {
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  width: 9px;
+  height: 6px;
+  background: #eab308;
+  transform: rotate(15deg);
+  border-radius: 2px;
+  opacity: 0.85;
+  animation: driftConfetti 3.5s ease-in-out infinite alternate 0.5s;
 }
 
-.statIconCircle {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.sparkleDot1 {
+  position: absolute;
+  top: 20%;
+  right: 25%;
+  width: 4px;
+  height: 4px;
+  background: #c084fc;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #c084fc;
 }
 
-.purpleIconCircle {
-  background: rgba(147, 51, 234, 0.15);
-  border: 1px solid rgba(147, 51, 234, 0.3);
-}
-.iconPurple { color: #c084fc; }
-
-.blueIconCircle {
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-.iconBlue { color: #60a5fa; }
-
-.greenIconCircle {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-.iconGreen { color: #34d399; }
-
-.orangeIconCircle {
-  background: rgba(249, 115, 22, 0.15);
-  border: 1px solid rgba(249, 115, 22, 0.3);
-}
-.iconOrange { color: #fb923c; }
-
-.statInfo {
-  display: flex;
-  flex-direction: column;
+.sparkleDot2 {
+  position: absolute;
+  bottom: 30%;
+  left: 20%;
+  width: 4px;
+  height: 4px;
+  background: #f472b6;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f472b6;
 }
 
-.statLabel {
-  font-size: 0.78rem;
-  color: #94a3b8;
-  font-weight: 500;
-  margin-bottom: 2px;
+@keyframes driftConfetti {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(35deg); }
 }
 
-.statValueRow {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.statNumber {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-.statUnit {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #c084fc;
-}
-
-.statUnitBlue {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #60a5fa;
-}
-
-.statUnitGreen {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #34d399;
-}
-
-.countdownDigit {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-.statSubText {
-  font-size: 0.72rem;
-  color: #fb923c;
-  font-weight: 600;
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .giftBoxWrapper {
-    display: none;
+    width: 150px;
+    height: 160px;
+  }
+  .giftImg {
+    width: 115px;
+    height: 115px;
+  }
+  .pedestal {
+    width: 115px;
   }
 }
 
 @media (max-width: 991px) {
-  .statsStrip {
-    grid-template-columns: repeat(2, 1fr);
+  .giftBoxWrapper {
+    display: none;
   }
   .mainTitle {
     font-size: 2.6rem;
@@ -322,10 +292,10 @@
 }
 
 @media (max-width: 576px) {
-  .statsStrip {
-    grid-template-columns: 1fr;
-  }
   .mainTitle {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 0.88rem;
   }
 }

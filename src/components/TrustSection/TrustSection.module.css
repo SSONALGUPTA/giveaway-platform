@@ -1,59 +1,62 @@
-.trustStrip {
+.trustContainer {
+  background: rgba(10, 14, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.trustGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 24px;
-  margin-bottom: 30px;
+  align-items: center;
+  width: 100%;
 }
 
-.trustCard {
-  background: #0d121f;
-  border: 1px solid #1a2236;
-  border-radius: 16px;
-  padding: 16px 18px;
+.trustCol {
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  padding: 4px 8px;
 }
 
-.trustCard:hover {
-  transform: translateY(-2px);
-  border-color: #2b3754;
-}
-
-.iconBox {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .iconBoxPurple {
-  background: rgba(147, 51, 234, 0.15);
-  border: 1px solid rgba(147, 51, 234, 0.3);
+  background: rgba(147, 51, 234, 0.16);
+  border: 1px solid rgba(168, 85, 247, 0.35);
 }
 .iconPurple { color: #c084fc; }
 
 .iconBoxBlue {
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.35);
 }
 .iconBlue { color: #60a5fa; }
 
 .iconBoxGreen {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.35);
 }
 .iconGreen { color: #34d399; }
 
 .iconBoxOrange {
-  background: rgba(249, 115, 22, 0.15);
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.35);
 }
 .iconOrange { color: #fb923c; }
 
@@ -63,27 +66,29 @@
 }
 
 .trustTitle {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 2px;
 }
 
 .trustDesc {
-  font-size: 0.72rem;
+  font-size: 0.73rem;
   color: #94a3b8;
   margin: 0;
   line-height: 1.35;
 }
 
 @media (max-width: 991px) {
-  .trustStrip {
+  .trustGrid {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
   }
 }
 
 @media (max-width: 576px) {
-  .trustStrip {
+  .trustGrid {
     grid-template-columns: 1fr;
+    row-gap: 14px;
   }
 }

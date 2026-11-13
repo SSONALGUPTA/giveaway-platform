@@ -35,21 +35,23 @@ const TRUST_ITEMS = [
 
 export default function TrustSection() {
   return (
-    <div className={styles.trustStrip}>
-      {TRUST_ITEMS.map((item) => {
-        const IconComp = item.icon;
-        return (
-          <div key={item.title} className={styles.trustCard}>
-            <div className={`${styles.iconBox} ${item.iconBoxClass}`}>
-              <IconComp size={18} className={item.iconClass} />
+    <div className={styles.trustContainer}>
+      <div className={styles.trustGrid}>
+        {TRUST_ITEMS.map((item) => {
+          const IconComp = item.icon;
+          return (
+            <div key={item.title} className={styles.trustCol}>
+              <div className={`${styles.iconCircle} ${item.iconBoxClass}`}>
+                <IconComp size={20} className={item.iconClass} />
+              </div>
+              <div className={styles.infoBox}>
+                <h4 className={styles.trustTitle}>{item.title}</h4>
+                <p className={styles.trustDesc}>{item.desc}</p>
+              </div>
             </div>
-            <div className={styles.infoBox}>
-              <h4 className={styles.trustTitle}>{item.title}</h4>
-              <p className={styles.trustDesc}>{item.desc}</p>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

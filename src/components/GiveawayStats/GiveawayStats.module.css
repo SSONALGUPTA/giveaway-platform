@@ -1,0 +1,158 @@
+.statsContainer {
+  background: rgba(10, 14, 26, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 18px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.statCol {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 16px;
+  position: relative;
+}
+
+.statCol:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.statCol:first-child {
+  padding-left: 0;
+}
+
+.statCol:last-child {
+  padding-right: 0;
+}
+
+.iconCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconCirclePurple {
+  background: rgba(147, 51, 234, 0.16);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+}
+
+.iconCircleBlue {
+  background: rgba(59, 130, 246, 0.16);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #60a5fa;
+}
+
+.iconCircleGreen {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.iconCircleOrange {
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: #fb923c;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.statValueRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.statNumber {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.statUnit {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.statUnitBlue {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.statUnitGreen {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+.countdownValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.statUnitOrange {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fb923c;
+}
+
+@media (max-width: 991px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 18px;
+  }
+  .statCol:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+  .statCol::after {
+    display: none !important;
+  }
+  .statCol {
+    padding: 0;
+  }
+}

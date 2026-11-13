@@ -4,17 +4,18 @@ import { useAuth } from '../hooks/useAuth';
 import { useWinners } from '../hooks/useWinners';
 import { useClaim } from '../hooks/useClaim';
 
-// Core Components matching the visual references & specification
+// Core Components matching Image 2 visual design & specifications
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import DevStateSwitcher from '../components/common/DevStateSwitcher';
 
 import Hero from '../components/Hero/Hero';
-import GiveawayBanner from '../components/GiveawayBanner/GiveawayBanner';
+import GiveawayStats from '../components/GiveawayStats/GiveawayStats';
 import PrizeCards from '../components/PrizeCards/PrizeCards';
 import HowToParticipate from '../components/HowToParticipate/HowToParticipate';
 import TrustSection from '../components/TrustSection/TrustSection';
 
+import GiveawayBanner from '../components/GiveawayBanner/GiveawayBanner';
 import WinnerSlider from '../components/Winners/WinnerSlider';
 import WinnerBanner from '../components/Winners/WinnerBanner';
 import WinnersSection from '../components/Winners/WinnersSection';
@@ -77,10 +78,10 @@ export default function GiveawayPage() {
 
   return (
     <div className={styles.pageContainer}>
-      {/* 1. Winner Slider Ticker (Social Proof ticker from Spec Section 18) */}
+      {/* Recent Winners Announcement Ticker */}
       <WinnerSlider items={sliderMessages} />
 
-      {/* 2. Top Navigation Bar */}
+      {/* Top Navigation Bar with Balances */}
       <Navbar
         isDetailPage={Boolean(selectedPrize)}
         onBackToHome={() => setSelectedPrize(null)}
@@ -99,8 +100,8 @@ export default function GiveawayPage() {
             onLoginClick={() => loginAs('ELIGIBLE_USER')}
           />
         ) : (
-          /* Main Complete Giveaway Page - Matching Image 2 and Image 1 Precisely */
-          <div className="container py-3">
+          /* Main Complete Giveaway Page - Precise Recreation of Image 2 */
+          <div className={styles.dashboardWrapper}>
             {/* Winner Notification Banner if logged-in user won (Spec Section 26) */}
             {user?.wonPrize && (
               <WinnerBanner
@@ -109,38 +110,35 @@ export default function GiveawayPage() {
               />
             )}
 
-            {/* Top Giveaway Section Header & Stats (Image 2) */}
-            <Hero
-              giveaway={giveaway}
-              status={giveawayStatus}
-            />
+            {/* Section 2: Hero Section matching Image 2 */}
+            <Hero />
 
-            {/* User Active Entries Pill Bar */}
+            {/* Section 3: Full-width Horizontal Statistics Banner matching Image 2 */}
+            <GiveawayStats giveaway={giveaway} />
+
+            {/* Section 4: Main Content Layout - 2-Column CSS Grid (72% Left / 28% Right) */}
+            <div className={styles.mainContentGrid}>
+              {/* Left Column: Featured Giveaways (4 Cards in one row) */}
+              <PrizeCards
+                prizes={prizes}
+                onSelectPrize={(prize) => setSelectedPrize(prize)}
+                onViewAll={handleScrollToRules}
+              />
+
+              {/* Right Column: How to Participate? Vertical Sidebar Card */}
+              <HowToParticipate onRulesClick={handleScrollToRules} />
+            </div>
+
+            {/* Section 5: Trust and Benefits Section */}
+            <TrustSection />
+
+            {/* User Active Entries & Participation Tracker */}
             <EntryDisplay
               onEarnMore={() => alert("Complete daily check-in tasks or invite friends to earn more entries!")}
               onLoginClick={() => loginAs('ELIGIBLE_USER')}
             />
 
-            {/* Main 2-Column Section (Image 2: Featured Giveaways on Left, How to Participate on Right) */}
-            <div className="row g-4 mb-4 align-items-stretch">
-              {/* Left Column (Approx 73% width) */}
-              <div className="col-lg-8">
-                <PrizeCards
-                  prizes={prizes}
-                  onSelectPrize={(prize) => setSelectedPrize(prize)}
-                />
-              </div>
-
-              {/* Right Column (Approx 27% width) */}
-              <div className="col-lg-4">
-                <HowToParticipate onRulesClick={handleScrollToRules} />
-              </div>
-            </div>
-
-            {/* Bottom 4 Trust Cards Strip (Image 2) */}
-            <TrustSection />
-
-            {/* Exclusive Giveaway Rewards Banner Card (Image 1) */}
+            {/* Exclusive Giveaway Rewards Banner Card (Image 1 reference) */}
             <GiveawayBanner onEnterGiveaway={handleScrollToPrizes} />
 
             {/* Winners & Previous Winners Showcase (Spec Section 21 & 22) */}

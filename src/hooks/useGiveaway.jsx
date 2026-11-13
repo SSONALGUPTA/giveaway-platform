@@ -49,23 +49,33 @@ export function GiveawayProvider({ children }) {
             .order('position', { ascending: true });
 
           if (!prizesError && prizesData && prizesData.length > 0) {
-            setPrizes(prizesData.map(p => ({
-              id: p.id,
-              giveawayId: p.giveaway_id,
-              slug: p.slug,
-              name: p.name,
-              position: p.position,
-              positionLabel: `${p.position}${p.position === 1 ? 'st' : p.position === 2 ? 'nd' : p.position === 3 ? 'rd' : 'th'} Prize`,
-              badgeLabel: p.badge_label,
-              type: p.type,
-              description: p.description,
-              imageUrl: p.image_url,
-              entryFee: p.entry_fee,
-              entryCurrency: p.entry_currency,
-              winnerCount: p.winner_count,
-              valueDisplay: p.value_display,
-              participantsCount: Math.floor(gwData.total_participants / prizesData.length)
-            })));
+            setPrizes(prizesData.map(p => {
+              const mockMatch = MOCK_PRIZES.find(m => m.slug === p.slug || m.position === p.position) || {};
+              return {
+                ...mockMatch,
+                id: p.id,
+                giveawayId: p.giveaway_id,
+                slug: p.slug,
+                name: mockMatch.name || p.name,
+                subname: mockMatch.subname || p.description,
+                position: p.position,
+                positionLabel: mockMatch.positionLabel || `${p.position}${p.position === 1 ? 'st' : p.position === 2 ? 'nd' : p.position === 3 ? 'rd' : 'th'} Prize`,
+                badgeLabel: mockMatch.badgeLabel || (p.position === 1 ? '1st Prize' : p.position === 2 ? '2nd Prize' : p.position === 3 ? '3rd Prize' : 'Lucky Draw'),
+                badgeColor: mockMatch.badgeColor || (p.position === 1 ? '#f59e0b' : p.position === 2 ? '#3b82f6' : p.position === 3 ? '#10b981' : '#f97316'),
+                glowColor: mockMatch.glowColor || (p.position === 1 ? 'rgba(168, 85, 247, 0.45)' : p.position === 2 ? 'rgba(59, 130, 246, 0.45)' : p.position === 3 ? 'rgba(16, 185, 129, 0.45)' : 'rgba(249, 115, 22, 0.45)'),
+                themeColor: mockMatch.themeColor || (p.position === 1 ? '#8b5cf6' : p.position === 2 ? '#3b82f6' : p.position === 3 ? '#10b981' : '#f97316'),
+                btnGradient: mockMatch.btnGradient || (p.position === 1 ? 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)' : p.position === 2 ? 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)' : p.position === 3 ? 'linear-gradient(135deg, #10b981 0%, #047857 100%)' : 'linear-gradient(135deg, #f97316 0%, #c2410c 100%)'),
+                type: p.type,
+                description: p.description || mockMatch.description,
+                imageUrl: mockMatch.imageUrl || p.image_url,
+                entryFee: p.entry_fee,
+                entryCurrency: p.entry_currency,
+                winnerCount: p.winner_count,
+                valueDisplay: p.value_display || mockMatch.valueDisplay,
+                participantsCount: mockMatch.participantsCount || 2300,
+                remainingTime: mockMatch.remainingTime || '12d : 08h : 45m left'
+              };
+            }));
           }
         }
       }
